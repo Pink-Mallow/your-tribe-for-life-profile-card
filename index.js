@@ -30,10 +30,13 @@ import { Liquid } from 'liquidjs';
 const app = express();
 const engine = new Liquid();
 
-const apiUrl = "https://fdnd.directus.app/items/person?fields=&filter[squads][squad_id][cohort][_eq]=2627";
+// const apiUrl = "https://fdnd.directus.app/items/person?fields=&filter[squads][squad_id][cohort][_eq]=2627";
 // standard https://fdnd.directus.app/items/person?fields=&filter[squads][squad_id][cohort][_eq]=2627
 // filter on name: https://fdnd.directus.app/items/person?fields=name&filter[squads][squad_id][cohort][_eq]=2627
+// filter on me https://fdnd.directus.app/items/person?*.*.*&filter[squads][squad_id][cohort][_eq]=2526&fields=name,team&filter[name][_istarts_with]=i&filter[year(birthdate)][_eq]=2004
+// filter on me and four things https://fdnd.directus.app/items/person?*.*.*&filter[squads][squad_id][cohort][_eq]=2526&fields=name,bio,fav_animal,fav_soup&filter[name][_istarts_with]=i&filter[year(birthdate)][_eq]=2004
 
+const apiUrl = "https://fdnd.directus.app/items/person?*.*.*&filter[squads][squad_id][cohort][_eq]=2526&fields=name,team&filter[name][_istarts_with]=i&filter[year(birthdate)][_eq]=2004";
 
 
 app.use(express.urlencoded({ extended: true }));
