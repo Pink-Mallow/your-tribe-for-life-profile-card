@@ -1,6 +1,5 @@
-
+{% render 'partials/head.liquid' %}
 <h1>Hello from Liquid! 🎉</h1>
+{% render 'partials/card.liquid', persons: persons %}
 
-{% for person in persons %}
-{{ person.name }}
-{% endfor %}
+{% render 'partials/foot.liquid' %}

@@ -36,7 +36,7 @@ const engine = new Liquid();
 // filter on me https://fdnd.directus.app/items/person?*.*.*&filter[squads][squad_id][cohort][_eq]=2526&fields=name,team&filter[name][_istarts_with]=i&filter[year(birthdate)][_eq]=2004
 // filter on me and four things https://fdnd.directus.app/items/person?*.*.*&filter[squads][squad_id][cohort][_eq]=2526&fields=name,bio,fav_animal,fav_soup&filter[name][_istarts_with]=i&filter[year(birthdate)][_eq]=2004
 
-const apiUrl = "https://fdnd.directus.app/items/person?*.*.*&filter[squads][squad_id][cohort][_eq]=2526&fields=name,team&filter[name][_istarts_with]=i&filter[year(birthdate)][_eq]=2004";
+const apiUrl = "https://fdnd.directus.app/items/person?*.*.*&filter[squads][squad_id][cohort][_eq]=2526&fields=name,bio,fav_animal,fav_soup&filter[name][_istarts_with]=i&filter[year(birthdate)][_eq]=2004";
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -52,6 +52,7 @@ app.get('/', async (req, res) => {
   res.render('index.liquid', {
     persons: personResponseJSON.data
   });
+  console.log(personResponseJSON)
 });
 
 app.listen(3000, () => {
