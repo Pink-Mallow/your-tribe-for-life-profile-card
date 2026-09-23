@@ -1,5 +1,9 @@
+<main>
 {% render 'partials/head.liquid' %}
 <h1>Hello from Liquid! 🎉</h1>
-{% render 'partials/card.liquid', persons: persons %}
+
+<section>{% render 'partials/frontface-card.liquid', persons: persons %}</section>
+<section>{% render 'partials/backface-card.liquid', persons: person %}</section>
 
 {% render 'partials/foot.liquid' %}
+</main>
